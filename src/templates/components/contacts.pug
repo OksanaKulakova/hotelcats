@@ -1,0 +1,31 @@
+include app-button.pug
+.contacts
+    .container
+        .row
+            .col-12.col-md-3.offset-md-1
+                h2 Как нас найти
+                ul.contacts__list
+                    li.contacts__item
+                        h5 Адрес
+                        p Санкт-Петербург,<br> ул Большая Конюшенная, д 19
+                    li.contacts__item
+                        h5 Режим работы
+                        p Ежедневно, с 9:00 до 20:00
+                    li.contacts__item
+                        h5 Телефон
+                        a(href="tel:+78003335599") 8 (800) 333-55-99
+                    li.contacts__item
+                        h5 E-mail
+                        a(href="mailto:info@cat-hotel.ru") info@cat-hotel.ru
+                    li.contacts__item
+                        h5 Социальные сети
+                        .contacts__social
+                            a(href="#")
+                                include ../../images/icons/social/facebook.svg
+                            a(href="#")
+                                include ../../images/icons/social/instagram.svg
+                            a(href="#")
+                                include ../../images/icons/social/vk.svg
+    .contacts__geo
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A066287972c57faf5a5859396f574c9d46c688a7c9446a7a715fca0c6354e9171&amp;source=constructor" width="100%" height="580" frameborder="0"></iframe>
+                

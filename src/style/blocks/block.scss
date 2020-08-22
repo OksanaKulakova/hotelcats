@@ -1,0 +1,49 @@
+.block {
+    position: relative;
+    padding-top: 140px;
+    overflow: hidden;
+    @include phone {
+        padding-top: 30px;
+    }
+    @include tablet {
+        padding-top: 60px;
+    }
+    &__title {
+        margin-bottom: 70px;
+        text-align: center;
+        @include phone {
+            margin-bottom: 20px;
+        }
+    }
+    &.--paw {
+        &::before {
+            content: url("../img/paw1.svg");
+            position: absolute;
+            top: -30px;
+            right: -30px;
+        }
+    }
+    &.--fish {
+        padding-top: 120px;
+        &::before {
+            content: url("../img/fish.svg");
+            position: absolute;
+            top: 130px;
+            left: -30px;
+        }
+        @include phone {
+            padding-top: 30px;
+        }
+        @include tablet {
+            padding-top: 60px;
+        }
+    }
+    &.--paw2 {
+        &::before {
+            content: url("../img/paw2.svg");
+            position: absolute;
+            top: -35px;
+            right: -30px;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+.contacts {
+    position: relative;
+    background: $yellow;
+    padding-top: 70px;
+    padding-bottom: 68px;
+    &__list {
+        margin-top: 45px;
+    }
+    &__item {
+        margin-top: 28px;
+        p {
+            margin-top: 8px;
+            font-size: 16px;
+            line-height: 19px;
+        }
+        a {
+            display: block;
+            margin-top: 7px;
+        }
+    }
+    &__social {
+        display: flex;
+        margin-top: 4px;
+        a {
+            display: block;
+            margin-right: 20px;
+            // &:hover {
+            //     svg {
+            //         path {
+            //             fill: $grey;
+            //         }
+            //     }
+            // }
+        }
+    }
+    &__geo {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60vw;
+        height: 100%;
+        @include phone {
+            display: none;
+        }
+    }
+}

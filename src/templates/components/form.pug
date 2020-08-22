@@ -1,0 +1,16 @@
+include app-button.pug
+- var classes = ['--orange', 'form__button', 'js-form'];
+form#order.form
+    button.form__close.close.js-close-popup
+        include ../../images/icons/close.svg
+    legend.form__title Забронировать номер
+    input.form__input(type='text' name='text' placeholder='Ваше имя' required)
+    input.form__input(type='text' name='text' placeholder='Имя Питомца' required)
+    input.form__input(type='tel' name='tel' placeholder='Телефон' required)
+    input.form__input(type='email' name='email' placeholder='E-mail' required)
+    .form__date
+        span Дата заезда c
+        input.form__input.--date(type='text' name='date' placeholder='26.01.2020' required)
+        span по
+        input.form__input.--date(type='text' name='date' placeholder='26.02.2020' required)
+    +app-button(classes)

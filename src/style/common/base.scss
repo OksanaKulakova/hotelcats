@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  //font-size: $base-font-size;
+  font-family: "Lato", sans-serif;
+  color: $text-color;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    color: $grey;
+  }
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+  font-family: "Rubik", sans-serif;
+}
+
+h1 {
+  font-size: rem(62px);
+}
+
+h2 {
+  font-size: rem(36px);
+  line-height: 25px;
+}
+
+h3 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 140%;
+}
+
+h4 {
+  font-size: rem(24px);
+}
+
+h5 {
+  font-size: rem(16px);
+}
+
+h6 {
+  font-size: rem(12px);
+}
+
+button {
+  border: none;
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}

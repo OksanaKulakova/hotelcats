@@ -1,0 +1,76 @@
+.room {
+    position: relative;
+    height: 404px;
+    @include phone {
+        height: 475px;
+    }
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 70px;
+        width: 600px;
+        height: 404px;
+        border-radius: 10px;
+        object-fit: cover;
+        z-index: 1;
+        @include small-desktop {
+            left: 30px; 
+        }
+        @include tablet {
+            left: 0;
+        }
+        @include phone {
+            width: calc(100vw - 30px);
+            height: 200px;
+            left: 0;
+        }
+    }
+    &__descr {
+        position: absolute;
+        top: 60px;
+        right: 70px;
+        width: 500px;
+        box-sizing: border-box;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 25px rgba(208, 208, 208, .25);
+        border-radius: 8px;
+        padding-top: 32px;
+        padding-bottom: 40px;
+        padding-left: 100px;
+        padding-right: 100px;
+        z-index: 2;
+        @include small-desktop {
+           right: 30px;
+        }
+        @include tablet {
+            width: 236px;
+            right: 0;
+            padding: 15px;
+            border: 1px solid $grey;
+        }
+        @include phone {
+            width: calc(100vw - 30px);
+            top: 200px;
+            right: 0;
+            padding: 15px;
+            border: none;
+        }
+    }
+    &__properties {
+        margin-top: 16px;
+        margin-bottom: 26px;
+        li {
+            font-size: $base-font-size;
+            margin-bottom: 13px;
+            &::before {
+                content: "";
+                display: inline-block;
+                width: 13px;
+                height: 13px;
+                border-radius: 50%;
+                margin-right: 8px;
+                background: $yellow;
+            }
+        }
+    }
+}

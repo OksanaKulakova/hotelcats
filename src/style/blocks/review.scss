@@ -1,0 +1,48 @@
+.review {
+    padding: 35px;
+    padding-top: 32px;
+    padding-bottom: 30px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 25px rgba(208, 208, 208, .25);
+    border-radius: 8px;
+    @include phone {
+        padding: 15px;
+    }
+    &__icon {
+        font-weight: 500;
+        font-size: 82px;
+        line-height: 68px;
+        color: $yellow;
+    }
+    &__text {
+        margin-left: 8px;
+        font-weight: 500;
+        font-size: $base-font-size;
+        line-height: 140%;
+        p {
+            height: 110px;
+            overflow: hidden;
+            @include phone {
+                height: auto;
+                overflow: visible;
+            }
+        }
+    }
+    &__info {
+        margin-top: 12px;
+        display: flex;
+        justify-content: space-between;
+        @include phone {
+			flex-direction: column;
+			justify-content: start;
+		}
+    }
+    &__name,
+    &__date {
+        span {
+            font-size: 14px;
+            line-height: 17px;
+            color: #848484;
+        }
+    }
+}

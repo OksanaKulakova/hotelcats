@@ -1,0 +1,64 @@
+.filter {
+    @include phone {
+        display: none;
+    }
+    &__item {
+        margin-bottom: 35px;
+        p{
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            margin-bottom: 20px;
+        }
+    }
+    &__price {
+        width: 100px;
+        height: 24px;
+        border: 1px solid #E1E1E1;
+        box-sizing: border-box;
+        margin-right: 10px;
+        padding-left: 5px;
+    }
+    &__checkbox {
+        margin-bottom: 15px;
+        label {
+            font-size: 14px;
+        }
+    }
+    &__select {
+        position: relative;
+        &.--up {
+            &::before {
+                content: url("../img/icons/up.svg");
+                position: absolute; 
+            }
+        }
+        &.--down {
+            &::before {
+                content: url("../img/icons/down.svg");
+                position: absolute;
+            }
+        }
+    }
+    &__button {
+        width: 185px;
+        height: 42px;
+        border: 2px solid $yellow;
+        box-sizing: border-box;
+        border-radius: 25px;
+        background-color: $white;
+        margin-bottom: 15px;
+        &:hover {
+            background-color: $yellow;
+        }
+        &.--yellow {
+            background-color: $yellow;
+            &:hover {
+                background-color: $white;
+            }
+        }
+        @include tablet {
+            width: 100%;
+        }
+    }
+}

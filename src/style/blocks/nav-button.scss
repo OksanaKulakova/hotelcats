@@ -1,0 +1,29 @@
+.nav-button {
+    display: none;
+    margin-left: auto;
+    @include phone {
+        display: block;
+    }
+    &:hover {
+        cursor: pointer
+    }  
+    &__line {
+        display: block;
+        transition: all .3s;
+        width: 27px;
+        height: 3px;
+        margin: 7px 0;
+        background-color: $text-color;
+        &.--short {
+            width: 17px
+        }
+        &.--first {
+            transform: translate(4px, -4px) rotate(45deg);
+            transform-origin: left top;
+        }
+        &.--last {
+            transform: translate(-4px, -14px) rotate(-45deg);
+            transform-origin: right bottom;
+        }   
+    }
+}

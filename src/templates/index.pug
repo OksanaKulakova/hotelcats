@@ -1,0 +1,68 @@
+extends ./layout/layout
+
+include components/advantage.pug
+include components/room.pug
+include components/review.pug
+
+block variables
+    - var page_title = 'Главная';
+    - 
+        var advantage_list =[
+            {title: 'Комфортная температура', img: 'temp.svg', text: 'Во всех номерах поддерживается комфортная температура в пределах 23 - 25 градусов. В каждом номере можно дополнительно отрегулировать температуру.'},
+            {title: 'Видеонаблюдение', img: 'video.svg', text: 'Мы предоставляем доступ в нашу систему. Вы сможете следить за своим питомцем со своего смартфона или компьютера.'},
+            {title: 'Услуги Зоотакси', img: 'taxi.svg', text: 'Мы приедем за вашим питомцем в любой район Санкт-Петербурга.'},
+            {title: 'Сбалансированное питание', img: 'food.png', text: 'Вы можете привезти свой корм или доверить рацион своего питомца нашим профессионалам.'},
+            {title: 'Ежедневные прогулки', img: 'walk.svg', text: 'По вашему желанию мы выгуливаем вашего питомца два раза в день на специализированной закрытой территории.'},
+            {title: 'Лучшие ветеринары', img: 'doc.svg', text: 'В гостинице 24 часа дежурит ветеринарный врач, который окажет любую помощь в случае необходимости.'},
+        ];
+    -
+        var room_list =[
+            {name: 'Эконом плюс', area: '0,90', size: '90х100х180 см', price: '200₽', img: 'economy.jpg'},
+            {name: 'Комфорт', area: '1,13', size: '100х125х180 см', price: '250₽', img: 'comfort.jpg'},
+            {name: 'Сьют', area: '1,56', size: '125х125х180 см', price: '350₽', img: 'suite.jpg'},
+        ];
+    -
+        var review_list =[
+            {text: 'Первый раз пришлось оставить нашего котика в гостинице, очень переживали. Администратор Мария каждый день высылала нам фото нашего питомца, рассказывала, как он себя чувствует. И мы и котик остались очень довольны!', name: 'Валерия Гришаева', date: '15 ноября, 2019'},
+            {text: 'Гостиницу для питомцев нам посоветовали друзья. Они всегда оставляют здесь своего кота, когда уезжают. В “Котейке” очень хорошо заботятся о питомцах, в гостинице очень чисто. Всем рекомендую! Будем обращаться еще.', name: 'Екатерина Минаева', date: '10 октября, 2019'},
+            {text: 'Мой кот — настоящая привереда, угодить ему сложно. У меня были особые требования к уходу за ним, и “Котейка” отлично справились. Я часто наблюдал по видео за питомцем со своего телефона, это очень удобно.', name: 'Павел Нечаев', date: '2 августа, 2019'},
+            {text: 'Первый раз пришлось оставить нашего котика в гостинице, очень переживали. Администратор Мария каждый день высылала нам фото нашего питомца, рассказывала, как он себя чувствует. И мы и котик остались очень довольны!', name: 'Валерия Гришаева', date: '15 ноября, 2019'},
+        ]
+
+block content
+    include components/promo.pug
+    section#why.block.--paw
+        .container
+            .block__title
+                h2 Почему мы?
+            .row
+               each item in advantage_list
+                    .col-12.col-md-6.col-xl-4
+                        +advantage(item)
+    section#rooms.block.--fish
+        .container
+            .block__title
+                h2 Номера
+            .swiper-container(data-slide="1" data-space="0")
+                .swiper-wrapper
+                    each item in room_list
+                        .swiper-slide
+                            +room(item)
+                .swiper-pagination
+                .swiper-button-prev
+                .swiper-button-next
+    section#reviews.block.--paw2
+        .container
+            .block__title
+                h2 Отзывы
+            .swiper-container.--width-mode(data-slide="auto" data-space="30")
+                .swiper-wrapper
+                    each item in review_list
+                        .swiper-slide.--width-mode
+                            +review(item)
+                .swiper-pagination
+                .swiper-button-prev
+                .swiper-button-next
+    section#contacts.block
+        include components/contacts.pug
+    

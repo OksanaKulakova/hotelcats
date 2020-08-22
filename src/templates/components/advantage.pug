@@ -1,0 +1,9 @@
+mixin advantage(data)
+    - var icons_dir = "../images/icons/advantage/";
+    .advantage
+        .advantage__image
+            img(src=icons_dir+data.img)
+        .advantage__title
+            h3=data.title
+        .advantage__text
+            p=data.text

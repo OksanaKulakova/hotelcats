@@ -1,0 +1,44 @@
+.banner {
+    position: relative;
+    height: 379px;
+    background-image: url("../img/banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    overflow: hidden;
+    &::before {
+        content: url("../img/paw-banner.svg");
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    @include tablet {
+        background-position-x: 70%;
+    }
+    &__descr {
+        padding-top: 70px;
+        padding-left: 270px;
+        @include tablet {
+            padding-left: 30px;
+        }
+        @include phone {
+            padding-left: 10px;
+            text-align: center;
+        }
+        h2 {
+            b {
+                font-weight: bold;
+                font-size: 56px;
+                line-height: 66px;
+                @include phone {
+                    font-size: 46px;
+                }
+            }
+        }
+        p {
+            width: 254px;
+            margin-top: 25px;
+            margin-bottom: 35px;
+        }
+    }
+}

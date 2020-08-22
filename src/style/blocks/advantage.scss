@@ -1,0 +1,21 @@
+.advantage {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 25px rgba(208, 208, 208, .25);
+    border-radius: 8px;
+    padding: 30px;
+    padding-bottom: 25px;
+    margin-bottom: 20px;
+    &__title {
+        margin-top: 26px;
+        margin-bottom: 6px;
+        @include tablet {
+            height: 60px;
+        }
+    }
+    &__text {
+        height: 110px;
+        overflow: hidden;
+        font-size: 16px;
+        line-height: 140%;
+    }
+}

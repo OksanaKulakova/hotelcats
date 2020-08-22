@@ -1,0 +1,24 @@
+include app-button.pug
+mixin product(data)
+    - var image_dir = "../images/catalog/";
+    - var icons_dir = "../images/icons/catalog/";
+    - var classes = ['--orange', '--catalog', 'js-popup'];
+    - var equip = [{img: 'sunbed.svg', name: 'Лежак'}, {img: 'claw.svg', name: 'Когтеточка'}, {img: 'game.svg', name: 'Игровой комплекс - 3 яруса'}, {img: 'home.svg', name: 'Домик'}]
+    - var n = 0;
+    .product
+        img.product__image(src=image_dir+data.img)
+        .product__descr
+            .product__name
+                h5=data.name
+            p="Размеры (ШхГхВ) — "+data.size
+            p="Площадь - "+data.area+" м"
+                <sup>2</sup>
+            p="Оснащение номера "
+                -if (data.equipment == 0)
+                    img(src=icons_dir+'no.svg' title='Пустой номер')
+                while n < data.equipment
+                    img(src=icons_dir+equip[n].img title=equip[n].name)
+                    - n++
+            p Цена за сутки: 
+                span=data.price
+            +app-button(classes)

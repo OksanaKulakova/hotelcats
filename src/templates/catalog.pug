@@ -1,0 +1,63 @@
+extends ./layout/layout
+
+include components/product.pug
+
+block variables
+    - var page_title = 'Каталог';
+    
+    -
+        var catalog =[
+            {name: 'Эконом', area: '0,90', size: '90х70х180 см', price: '100₽', img: 'economy.jpg', equipment: ''},
+            {name: 'Эконом плюс', area: '0,90', size: '90х100х180 см', price: '200₽', img: 'economy-plus.jpg', equipment: 2},
+            {name: 'Комфорт', area: '1,13', size: '100х125х180 см', price: '250₽', img: 'comfort.jpg', equipment: 3},
+            {name: 'Сьют', area: '1,56', size: '125х125х180 см', price: '350₽', img: 'suite.jpg', equipment: 3},
+            {name: 'Люкс', area: '2,56', size: '160х160х180 см', price: '500₽', img: 'lux.jpg', equipment: 4},
+            {name: 'Супер-Люкс', area: '2,88', size: '180х160х180 см', price: '600₽', img: 'super-lux.jpg', equipment: 4},
+        ];
+    - var equipment =['Пустой номер', 'Лежак', 'Когтеточка', 'Игровой-комплекс', 'Домик']
+    - var area=['0.63', '0.90', '1,13', '1,56', '2,56', '2,88']
+
+block content
+    .catalog
+        .container
+            .catalog__title
+                h2 Наши номера
+                //- select.filter.js-styler(name="select")
+                //-     <option class="filter__select --up" value="value1">По площади</option> 
+                //-     <option class="filter__select --down" value="value2">По площади</option>
+                //-     <option class="filter__select --up" value="value3">По цене</option>
+                //-     <option class="filter__select --down" value="value3">По цене</option>
+            .row
+                .col-3
+                    aside.filter
+                        form
+                            .filter__item
+                                p Цена за сутки, ₽
+                                input.filter__price(type='text' name='number' value='от 100')
+                                input.filter__price(type='text' name='number' value='до 600')
+                            .filter__item
+                                p Площадь
+                                each item in area
+                                    .filter__checkbox
+                                        input.js-styler(name="area", type="checkbox" checked)
+                                        label(for="area")=item+' м'
+                                            <sup>2</sup>
+                            .filter__item
+                                p Оснащение номера
+                                each item in equipment
+                                    .filter__checkbox
+                                        input.js-styler(name="equipment", type="checkbox" checked)
+                                        label(for="equipment")=item 
+                            button.filter__button.--yellow Применить
+                            button.filter__button Сбросить фильтр      
+                .col-12.col-md-9
+                    .catalog__list
+                        .row
+                            each item in catalog
+                                .col-12.col-md-6.col-lg-4
+                                    .catalog__item
+                                        +product(item)
+    section.block
+        include components/banner.pug
+    section#contacts.block
+        include components/contacts.pug

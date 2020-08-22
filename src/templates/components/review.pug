@@ -1,0 +1,11 @@
+mixin review(data)
+    .review.d-flex
+        p.review__icon “
+        .review__text
+            p=data.text
+            .review__info
+                .review__name
+                    span=data.name
+                .review__date
+                    span=data.date
+

@@ -1,0 +1,29 @@
+.footer {
+	&__nav {
+		border-bottom: 1px solid #EFEFEF;
+		@include phone {
+			display: none;
+		}
+	}
+	&__block {
+		height: 50px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@include phone {
+			flex-direction: column;
+			justify-content: start;
+		}
+	}
+	&__copy,
+	&__privacy {
+		a {
+			font-size: 12px;
+			line-height: 14px;
+			color: $grey;
+			&:hover {
+				color: $text-color;
+			}
+		}
+	}
+}

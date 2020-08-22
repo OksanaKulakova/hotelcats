@@ -1,0 +1,13 @@
+mixin room(data)
+    - var image_dir = "../images/room/";
+    - var classes = ['--orange', 'js-popup'];
+    .room    
+        img.room__image(src=image_dir+data.img)
+        .room__descr
+            h3=data.name
+            ul.room__properties
+                li="Площадь - "+data.area+"м"
+                    <sup>2</sup>
+                li="Размеры (ШхГхВ) — "+data.size
+                li="Цена за сутки: "+data.price
+            +app-button(classes)
